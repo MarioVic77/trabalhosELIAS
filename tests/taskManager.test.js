@@ -1,8 +1,10 @@
-import { describe, it, expect } from 'vitest';
-import { validateTitle } from '../src/taskManager.js';
+import { createTask } from '../src/taskManager.js';
 
-describe('validateTitle', () => {
-  it('deve retornar true para título válido', () => {
-    expect(validateTitle('Estudar')).toBe(true);
+describe('createTask', () => {
+  it('deve criar uma tarefa', () => {
+    const task = createTask('Estudar');
+
+    expect(task.title).toBe('Estudar');
+    expect(task.completed).toBe(false);
   });
 });
